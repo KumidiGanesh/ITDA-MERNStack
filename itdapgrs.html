@@ -1,0 +1,1639 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ITDA Paderu | Araku Valley Tourism</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f8f3;
+    color:#222;
+    line-height:1.6;
+}
+
+button{
+    font-family:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:#063b2a;
+    color:white;
+    padding:12px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.25);
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+    object-fit:contain;
+}
+
+.logo-text h2{
+    font-size:20px;
+    color:#ffd447;
+}
+
+.logo-text p{
+    font-size:11px;
+    color:#e2eee8;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:4px;
+}
+
+nav button{
+    border:none;
+    background:transparent;
+    color:white;
+    padding:10px 12px;
+    cursor:pointer;
+    border-radius:5px;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav button:hover,
+nav button.active{
+    background:#ffd447;
+    color:#063b2a;
+}
+
+/* =========================
+   PAGES
+========================= */
+
+.page{
+    display:none;
+    min-height:80vh;
+}
+
+.page.active{
+    display:block;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:650px;
+    background:
+    linear-gradient(rgba(2,45,29,.58),rgba(2,45,29,.70)),
+    url("https://media.andhrajyothy.com/media/2025/20250530/17pdr2_0780c90d03_v_jpg.webp")
+    center/cover;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:60px 20px;
+}
+
+.hero-content{
+    max-width:1000px;
+}
+
+.hero h1{
+    font-size:58px;
+    color:#ffd447;
+    text-shadow:2px 3px 8px #000;
+}
+
+.hero h2{
+    font-size:30px;
+    margin:10px 0 20px;
+}
+
+.hero p{
+    font-size:19px;
+    max-width:800px;
+    margin:auto;
+}
+
+.hero-buttons{
+    margin-top:30px;
+}
+
+.btn{
+    border:none;
+    padding:14px 25px;
+    margin:5px;
+    border-radius:7px;
+    background:#ffd447;
+    color:#063b2a;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:#fff;
+}
+
+.btn-green{
+    background:#08734e;
+    color:white;
+}
+
+.btn-green:hover{
+    background:#0b9465;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    padding:60px 7%;
+}
+
+.title{
+    text-align:center;
+    color:#07563c;
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.subtitle{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    color:#666;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+    max-width:1200px;
+    margin:40px auto 0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,.10);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:22px;
+}
+
+.card h3{
+    color:#07563c;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#666;
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+/* =========================
+   PAGE BANNER
+========================= */
+
+.banner{
+    min-height:260px;
+
+    background:
+    linear-gradient(rgba(3,66,44,.80),rgba(3,66,44,.80)),
+    url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEig_7DNwV9ZbQ7WOI6KehaXOLY3eeG8MqwCNy_T2-XuBESAb5gmssA7of-DbhhakmHZ3NRlx_IzAMSGe7M3TkY4bqOC6ZbHTB2rG0Epe3ba4wSCrR-YC84iMcwnWLRw2b2iUpMIiPPNJmFZmFvs7BS4VJVMgE_xB-ym9MzaYycJ1866fBP3rFvhxKslCg/w1200-h630-p-k-no-nu/Alluri%20Sitarama%20Raju%20District.jpg")
+    center/cover;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.banner h1{
+    font-size:45px;
+    color:#ffd447;
+}
+
+.banner p{
+    font-size:18px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-box{
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.about-box h2{
+    color:#07563c;
+    margin-bottom:15px;
+}
+
+.about-box p{
+    margin-bottom:15px;
+    color:#555;
+}
+
+/* =========================
+   ARaku TOURISM
+========================= */
+
+.tourism-intro{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
+}
+
+.tourism-intro img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+}
+
+.tourism-text h2{
+    color:#07563c;
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.tourism-text p{
+    color:#555;
+    margin-bottom:15px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    max-width:1200px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    border-radius:14px;
+    height:260px;
+    box-shadow:0 5px 18px rgba(0,0,0,.15);
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-box{
+    width:90%;
+    max-width:800px;
+    margin:50px auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 25px rgba(0,0,0,.10);
+}
+
+.form-box h2{
+    text-align:center;
+    color:#07563c;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    font-weight:bold;
+    margin:15px 0 6px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #ccd7d0;
+    border-radius:7px;
+    font-size:15px;
+    outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#08734e;
+    box-shadow:0 0 0 2px rgba(8,115,78,.12);
+}
+
+textarea{
+    resize:vertical;
+}
+
+.submit{
+    width:100%;
+    margin-top:25px;
+    padding:14px;
+    background:#07563c;
+    color:white;
+    border:none;
+    border-radius:7px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.submit:hover{
+    background:#0b9465;
+}
+
+/* =========================
+   TOURIST PLACE HIGHLIGHT
+========================= */
+
+.place-section{
+    background:#e8f2e8;
+}
+
+.place-grid{
+    max-width:1200px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.place{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.10);
+}
+
+.place img{
+    height:180px;
+    width:100%;
+    object-fit:cover;
+}
+
+.place div{
+    padding:18px;
+}
+
+.place h3{
+    color:#07563c;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-grid{
+    max-width:1100px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.contact{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.contact-icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.contact h3{
+    color:#07563c;
+    margin-bottom:8px;
+}
+
+/* =========================
+   PGRS STATUS
+========================= */
+
+.status{
+    display:none;
+    margin-top:25px;
+    padding:20px;
+    background:#e9f6ec;
+    border-left:5px solid #08734e;
+    border-radius:7px;
+}
+
+.status h3{
+    color:#07563c;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#032b1f;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer h2{
+    color:#ffd447;
+    margin-bottom:5px;
+}
+
+footer p{
+    color:#d8e8df;
+    font-size:14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    header{
+        flex-direction:column;
+    }
+
+    nav{
+        width:100%;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .place-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .tourism-intro{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .cards,
+    .place-grid,
+    .gallery,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .banner h1{
+        font-size:32px;
+    }
+
+    .section{
+        padding:40px 5%;
+    }
+
+    nav button{
+        font-size:12px;
+        padding:8px;
+    }
+
+    .logo-text h2{
+        font-size:17px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="logo-area">
+
+<!-- ITDA LOGO -->
+<img
+class="logo"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Emblem_of_India.svg/512px-Emblem_of_India.svg.png"
+alt="Integrated Tribal Development Agency Logo">
+
+<div class="logo-text">
+<h2>ITDA Paderu</h2>
+<p>Integrated Tribal Development Agency</p>
+</div>
+
+</div>
+
+
+<nav>
+
+<button class="active" onclick="showPage('home',this)">
+Home
+</button>
+
+<button onclick="showPage('about',this)">
+About ITDA
+</button>
+
+<button onclick="showPage('araku',this)">
+Araku Tourism
+</button>
+
+<button onclick="showPage('places',this)">
+Tourist Places
+</button>
+
+<button onclick="showPage('gallery',this)">
+Gallery
+</button>
+
+<button onclick="showPage('pgrs',this)">
+PGRS
+</button>
+
+<button onclick="showPage('contact',this)">
+Contact
+</button>
+
+</nav>
+
+</header>
+
+
+
+<!-- =========================
+     HOME PAGE
+========================= -->
+
+<section id="home" class="page active">
+
+<div class="hero">
+
+<div class="hero-content">
+
+<h1>ITDA Paderu</h1>
+
+<h2>Integrated Tribal Development Agency</h2>
+
+<p>
+Welcome to the official-style digital information portal
+for ITDA Paderu, tribal development, public services,
+nature and tourism of the beautiful Araku region.
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn"
+onclick="showPage('araku')">
+Explore Araku
+</button>
+
+<button class="btn btn-green"
+onclick="showPage('pgrs')">
+Register Grievance
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2 class="title">
+Welcome to Paderu & Araku
+</h2>
+
+<p class="subtitle">
+Explore tribal culture, green valleys, waterfalls,
+coffee plantations, hills and beautiful tourist destinations
+around the Alluri Sitharama Raju district.
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<img src="https://www.deccanchronicle.com/h-upload/2026/06/14/2051759-padmapuram-botanical-garden-1.webp">
+
+<div class="card-content">
+
+<div class="icon">🏛️</div>
+
+<h3>ITDA Development</h3>
+
+<p>
+Learn about tribal development, welfare and
+public service activities in the Paderu region.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="data:image/jpeg;base64,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">
+
+<div class="card-content">
+
+<div class="icon">🌄</div>
+
+<h3>Natural Beauty</h3>
+
+<p>
+Discover the beautiful hills, forests and valleys
+of the Araku and Paderu region.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://caleidoscope.in/wp-content/uploads/2024/12/Tribes-of-Araku-Valley-01.jpg">
+
+<div class="card-content">
+
+<div class="icon">🌱</div>
+
+<h3>Tribal Life</h3>
+
+<p>
+Experience the culture, traditions and lifestyle
+of tribal communities.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT ITDA
+========================= -->
+
+<section id="about" class="page">
+
+<div class="banner">
+
+<div>
+
+<h1>About ITDA Paderu</h1>
+
+<p>Integrated Tribal Development Agency</p>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<div class="about-box">
+
+<h2>Integrated Tribal Development Agency</h2>
+
+<p>
+ITDA Paderu is associated with development and welfare
+activities in tribal areas of the region.
+</p>
+
+<p>
+The agency focuses on improving access to education,
+healthcare, infrastructure, livelihood opportunities,
+agriculture and other welfare services.
+</p>
+
+<p>
+The Paderu and Araku region is well known for its
+rich tribal heritage, forests, coffee plantations,
+hills, valleys and waterfalls.
+</p>
+
+<p>
+This website concept combines information about
+ITDA Paderu, Public Grievance Redressal Services
+and tourism information into one easy-to-use portal.
+</p>
+
+</div>
+
+
+<h2 class="title" style="margin-top:50px;">
+Development Areas
+</h2>
+
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-content">
+
+<div class="icon">🎓</div>
+
+<h3>Education</h3>
+
+<p>
+Promoting educational opportunities for
+tribal students and communities.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-content">
+
+<div class="icon">🏥</div>
+
+<h3>Healthcare</h3>
+
+<p>
+Supporting access to healthcare and
+welfare services in tribal areas.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-content">
+
+<div class="icon">🌾</div>
+
+<h3>Livelihood</h3>
+
+<p>
+Supporting agriculture, livelihoods,
+skills and economic development.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ARAKU TOURISM
+========================= -->
+
+<section id="araku" class="page">
+
+<div class="banner">
+
+<div>
+
+<h1>Araku Valley Tourism</h1>
+
+<p>Valleys • Hills • Coffee • Waterfalls • Tribal Culture</p>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<div class="tourism-intro">
+
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3IGL5zfREhFw_UGuiBMaGAhRcc1TXpuFat0PwyuIWsJZNmBrPc4t8R3I&s=10"> 
+
+<div class="tourism-text">
+
+<h2>Discover Araku Valley</h2>
+
+<p>
+Araku Valley is one of the most beautiful hill regions
+of Andhra Pradesh, surrounded by green mountains,
+forests and valleys.
+</p>
+
+<p>
+The region is famous for its coffee plantations,
+tribal culture, waterfalls, scenic viewpoints and
+pleasant hill-station environment.
+</p>
+
+<p>
+Visitors can enjoy nature, photography, local food,
+tribal culture and the spectacular landscapes of
+the Eastern Ghats.
+</p>
+
+<button class="btn"
+onclick="showPage('places')">
+View Tourist Places
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="section place-section">
+
+<h2 class="title">
+Beautiful Araku Attractions
+</h2>
+
+<div class="place-grid">
+
+
+<div class="place">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80">
+
+<div>
+
+<h3>Araku Valley</h3>
+
+<p>
+Green mountains and scenic valley landscapes.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="place">
+
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80">
+
+<div>
+
+<h3>Eastern Ghats</h3>
+
+<p>
+Beautiful mountain landscapes surrounding Araku.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="place">
+
+<img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80">
+
+<div>
+
+<h3>Forest Region</h3>
+
+<p>
+Lush green forests and natural surroundings.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="place">
+
+<img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1000&q=80">
+
+<div>
+
+<h3>Waterfalls</h3>
+
+<p>
+Enjoy the beauty of waterfalls and streams.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     TOURIST PLACES
+========================= -->
+
+<section id="places" class="page">
+
+<div class="banner">
+
+<div>
+
+<h1>Tourist Places</h1>
+
+<p>Explore the natural wonders of Araku & Paderu</p>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<div class="cards">
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80">
+
+<div class="card-content">
+
+<h3>Araku Valley</h3>
+
+<p>
+A scenic hill valley surrounded by the Eastern Ghats.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1000&q=80">
+
+<div class="card-content">
+
+<h3>Waterfalls</h3>
+
+<p>
+Beautiful waterfalls and streams make the region
+attractive for nature lovers.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80">
+
+<div class="card-content">
+
+<h3>Forest & Hills</h3>
+
+<p>
+Green forests and mountain scenery offer
+excellent photography opportunities.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section id="gallery" class="page">
+
+<div class="banner">
+
+<div>
+
+<h1>Photo Gallery</h1>
+
+<p>Paderu • Araku • Tribal Region</p>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<div class="gallery">
+
+
+<div class="gallery-item">
+
+<img src="https://cf-images.assettype.com/newindianexpress/2025-05-19/1difhrok/C_40_1_CH1456_30488259.jpg?w=1200&h=900&auto=format%2Ccompress&fit=max&enlarge=true">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img src="https://media.andhrajyothy.com/media/2025/20250530/17pdr2_0780c90d03_v_jpg.webp">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img src="https://thecoastaltimes.in/wp-content/uploads/2026/04/1-47-765x500.jpg">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img src="https://assets.hmtvlive.com/h-upload/2026/09/03/451022-paderu.jpg">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img src="https://media.andhrajyothy.com/media/2026/20260822/2pdr3_8b1540053a_V_jpg--625x351-4g.webp">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEig_7DNwV9ZbQ7WOI6KehaXOLY3eeG8MqwCNy_T2-XuBESAb5gmssA7of-DbhhakmHZ3NRlx_IzAMSGe7M3TkY4bqOC6ZbHTB2rG0Epe3ba4wSCrR-YC84iMcwnWLRw2b2iUpMIiPPNJmFZmFvs7BS4VJVMgE_xB-ym9MzaYycJ1866fBP3rFvhxKslCg/w1200-h630-p-k-no-nu/Alluri%20Sitarama%20Raju%20District.jpg">
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PGRS
+========================= -->
+
+<section id="pgrs" class="page">
+
+<div class="banner">
+
+<div>
+
+<h1>Public Grievance Redressal System</h1>
+
+<p>Submit your grievance online</p>
+
+</div>
+
+</div>
+
+
+<div class="form-box">
+
+<h2>Grievance Registration</h2>
+
+
+<form onsubmit="submitGrievance(event)">
+
+
+<label>Full Name</label>
+
+<input
+type="text"
+placeholder="Enter your full name"
+required>
+
+
+<label>Mobile Number</label>
+
+<input
+type="tel"
+placeholder="Enter mobile number"
+required>
+
+
+<label>District</label>
+
+<select required>
+
+<option value="">
+Select District
+</option>
+
+<option>
+Alluri Sitharama Raju
+</option>
+
+<option>
+Visakhapatnam
+</option>
+
+<option>
+Anakapalli
+</option>
+
+</select>
+
+
+<label>Mandal</label>
+
+<input
+type="text"
+placeholder="Enter mandal">
+
+
+<label>Grievance Category</label>
+
+<select required>
+
+<option value="">
+Select Category
+</option>
+
+<option>
+Education
+</option>
+
+<option>
+Health
+</option>
+
+<option>
+Roads
+</option>
+
+<option>
+Drinking Water
+</option>
+
+<option>
+Agriculture
+</option>
+
+<option>
+Housing
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+
+<label>Subject</label>
+
+<input
+type="text"
+placeholder="Enter grievance subject"
+required>
+
+
+<label>Describe Your Grievance</label>
+
+<textarea
+rows="6"
+placeholder="Describe your problem"
+required></textarea>
+
+
+<label>Upload Document</label>
+
+<input type="file">
+
+
+<button class="submit" type="submit">
+Submit Grievance
+</button>
+
+</form>
+
+
+<div id="successStatus" class="status">
+
+<h3>Grievance Submitted Successfully!</h3>
+
+<p>
+Your Demo Grievance ID:
+<strong>PGRS20260001</strong>
+</p>
+
+<p>
+Please keep this ID for tracking.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="page">
+
+<div class="banner">
+
+<div>
+
+<h1>Contact ITDA Paderu</h1>
+
+<p>Get in touch with the concerned office</p>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<div class="contact-grid">
+
+
+<div class="contact">
+
+<div class="contact-icon">
+📍
+</div>
+
+<h3>Office</h3>
+
+<p>
+Integrated Tribal Development Agency,
+Paderu, Andhra Pradesh.
+</p>
+
+</div>
+
+
+<div class="contact">
+
+<div class="contact-icon">
+📞
+</div>
+
+<h3>Phone</h3>
+
+<p>
+Contact the concerned ITDA Paderu
+office for official assistance.
+</p>
+
+</div>
+
+
+<div class="contact">
+
+<div class="contact-icon">
+✉️
+</div>
+
+<h3>Email</h3>
+
+<p>
+Use the official ITDA communication
+channel for enquiries.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="form-box">
+
+<h2>Send an Enquiry</h2>
+
+
+<form onsubmit="sendMessage(event)">
+
+<label>Name</label>
+
+<input
+type="text"
+placeholder="Enter your name"
+required>
+
+
+<label>Email</label>
+
+<input
+type="email"
+placeholder="Enter your email"
+required>
+
+
+<label>Subject</label>
+
+<input
+type="text"
+placeholder="Enter subject"
+required>
+
+
+<label>Message</label>
+
+<textarea
+rows="5"
+placeholder="Write your message"
+required></textarea>
+
+
+<button class="submit" type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<h2>ITDA Paderu</h2>
+
+<p>
+Integrated Tribal Development Agency
+</p>
+
+<p>
+Paderu • Araku Valley • Alluri Sitharama Raju District
+</p>
+
+<p>
+© 2026 ITDA Paderu | Tourism & Public Services Portal
+</p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function showPage(pageId,button){
+
+    const pages=document.querySelectorAll(".page");
+
+    pages.forEach(function(page){
+        page.classList.remove("active");
+    });
+
+    document.getElementById(pageId).classList.add("active");
+
+
+    const buttons=document.querySelectorAll("nav button");
+
+    buttons.forEach(function(btn){
+        btn.classList.remove("active");
+    });
+
+
+    if(button){
+        button.classList.add("active");
+    }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* PGRS FORM */
+
+function submitGrievance(event){
+
+    event.preventDefault();
+
+    document.getElementById("successStatus").style.display="block";
+
+    alert(
+        "Grievance submitted successfully!\n\n" +
+        "Demo Grievance ID: PGRS20260001"
+    );
+
+}
+
+
+/* CONTACT FORM */
+
+function sendMessage(event){
+
+    event.preventDefault();
+
+    alert(
+        "Thank you!\n\n" +
+        "Your enquiry has been submitted successfully."
+    );
+
+}
+
+</script>
+
+</body>
+</html>
+```

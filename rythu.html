@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rythu Mithra - Farmer Support Portal</title>
+
+    <style>
+        /* =========================
+           GLOBAL STYLES
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f9f3;
+            color: #263b28;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVIGATION BAR
+        ========================== */
+
+        header {
+            background: #146b35;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 35px;
+        }
+
+        .logo h1 {
+            font-size: 25px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 11px;
+            color: #d7f5d8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffdd55;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(0,80,30,0.72), rgba(0,80,30,0.72)),
+                url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h2 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #ffca28;
+            color: #173b20;
+        }
+
+        .btn-primary:hover {
+            background: #ffd95c;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #146b35;
+        }
+
+        /* =========================
+           COMMON SECTION
+        ========================== */
+
+        .section {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: #146b35;
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #657565;
+        }
+
+        /* =========================
+           QUICK SERVICES
+        ========================== */
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #146b35;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           WEATHER
+        ========================== */
+
+        .weather-section {
+            background: #e8f5e9;
+        }
+
+        .weather-box {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .weather-main {
+            text-align: center;
+            border-right: 1px solid #ddd;
+        }
+
+        .weather-icon {
+            font-size: 65px;
+        }
+
+        .temperature {
+            font-size: 45px;
+            font-weight: bold;
+            color: #146b35;
+        }
+
+        .weather-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .weather-item {
+            background: #f5faf5;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .weather-item strong {
+            color: #146b35;
+        }
+
+        /* =========================
+           CROP INFORMATION
+        ========================== */
+
+        .crop-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .crop-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .crop-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .rice {
+            background-image: url("https://images.unsplash.com/photo-1536633057144-2e6e2e5d5f6d?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .cotton {
+            background-image: url("https://images.unsplash.com/photo-1598514982901-ae627e8f2a5b?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .vegetables {
+            background-image: url("https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .crop-content {
+            padding: 20px;
+        }
+
+        .crop-content h3 {
+            color: #146b35;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           MARKET PRICES
+        ========================== */
+
+        .market-section {
+            background: #f1f8e9;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #146b35;
+            color: white;
+            padding: 16px;
+            text-align: left;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f4faf4;
+        }
+
+        .price-up {
+            color: #198754;
+            font-weight: bold;
+        }
+
+        /* =========================
+           SCHEMES
+        ========================== */
+
+        .scheme-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .scheme-card {
+            background: white;
+            border-left: 5px solid #146b35;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+        }
+
+        .scheme-card h3 {
+            color: #146b35;
+            margin-bottom: 10px;
+        }
+
+        .scheme-card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #146b35;
+            font-weight: bold;
+        }
+
+        /* =========================
+           FARMER REGISTRATION
+        ========================== */
+
+        .registration {
+            background: #146b35;
+            color: white;
+        }
+
+        .registration-box {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            color: #263b28;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #146b35;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            padding: 14px;
+            background: #ffca28;
+            color: #173b20;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-card .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            color: #146b35;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #0c4522;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .footer-links {
+            margin: 15px 0;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: #ffca28;
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================== */
+
+        @media(max-width: 900px) {
+
+            .nav-links {
+                gap: 12px;
+                font-size: 14px;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .crop-grid,
+            .scheme-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .weather-box {
+                grid-template-columns: 1fr;
+            }
+
+            .weather-main {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 20px;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            nav {
+                height: auto;
+                padding: 15px 0;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h2 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .service-grid,
+            .crop-grid,
+            .scheme-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .weather-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+        <nav>
+
+            <div class="logo">
+                <div class="logo-icon">🌾</div>
+
+                <div>
+                    <h1>Rythu Mithra</h1>
+                    <span>Farmer Support Portal</span>
+                </div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#crops">Crops</a></li>
+                <li><a href="#market">Market</a></li>
+                <li><a href="#schemes">Schemes</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h2>🌾 Rythu Mithra</h2>
+
+            <p>
+                Your Digital Farming Friend
+            </p>
+
+            <p>
+                Get crop information, weather updates,
+                market prices, government schemes and
+                useful farming services in one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#services" class="btn btn-primary">
+                    Explore Services
+                </a>
+
+                <a href="#registration" class="btn btn-secondary">
+                    Farmer Registration
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="section" id="services">
+
+        <div class="section-title">
+
+            <h2>Farmer Services</h2>
+
+            <p>
+                Useful digital services for farmers
+            </p>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <div class="service-icon">🌦️</div>
+                <h3>Weather</h3>
+                <p>
+                    Check weather conditions and rainfall
+                    information for better crop planning.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Market Prices</h3>
+                <p>
+                    View crop market prices and compare
+                    available rates.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌱</div>
+                <h3>Crop Information</h3>
+                <p>
+                    Learn about crop selection,
+                    cultivation and farming practices.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏛️</div>
+                <h3>Government Schemes</h3>
+                <p>
+                    Find useful government agriculture
+                    schemes and farmer benefits.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WEATHER
+    ========================== -->
+
+    <section class="section weather-section">
+
+        <div class="section-title">
+
+            <h2>Today's Weather</h2>
+
+            <p>
+                Sample weather information
+            </p>
+
+        </div>
+
+        <div class="weather-box">
+
+            <div class="weather-main">
+
+                <div class="weather-icon">☀️</div>
+
+                <h3>Partly Cloudy</h3>
+
+                <div class="temperature">
+                    28°C
+                </div>
+
+                <p>Andhra Pradesh</p>
+
+            </div>
+
+            <div class="weather-info">
+
+                <div class="weather-item">
+                    💧 Humidity
+                    <br>
+                    <strong>68%</strong>
+                </div>
+
+                <div class="weather-item">
+                    💨 Wind Speed
+                    <br>
+                    <strong>12 km/h</strong>
+                </div>
+
+                <div class="weather-item">
+                    🌧️ Rain Chance
+                    <br>
+                    <strong>25%</strong>
+                </div>
+
+                <div class="weather-item">
+                    🌡️ Feels Like
+                    <br>
+                    <strong>30°C</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CROPS
+    ========================== -->
+
+    <section class="section" id="crops">
+
+        <div class="section-title">
+
+            <h2>Popular Crops</h2>
+
+            <p>
+                Basic information about important crops
+            </p>
+
+        </div>
+
+        <div class="crop-grid">
+
+            <div class="crop-card">
+
+                <div class="crop-image rice"></div>
+
+                <div class="crop-content">
+
+                    <h3>🌾 Rice</h3>
+
+                    <p>
+                        Rice requires suitable soil,
+                        adequate water and proper crop
+                        management for good production.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="crop-card">
+
+                <div class="crop-image cotton"></div>
+
+                <div class="crop-content">
+
+                    <h3>🌿 Cotton</h3>
+
+                    <p>
+                        Cotton is an important commercial
+                        crop requiring proper pest and
+                        irrigation management.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="crop-card">
+
+                <div class="crop-image vegetables"></div>
+
+                <div class="crop-content">
+
+                    <h3>🥕 Vegetables</h3>
+
+                    <p>
+                        Vegetables can provide farmers
+                        with diversified income when
+                        cultivated using suitable methods.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MARKET
+    ========================== -->
+
+    <section class="section market-section" id="market">
+
+        <div class="section-title">
+
+            <h2>🌾 Market Prices</h2>
+
+            <p>
+                Sample agricultural market information
+            </p>
+
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Crop</th>
+                        <th>Market</th>
+                        <th>Price / Quintal</th>
+                        <th>Trend</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Rice</td>
+                        <td>Visakhapatnam</td>
+                        <td>₹2,350</td>
+                        <td class="price-up">▲ Rising</td>
+                    </tr>
+
+                    <tr>
+                        <td>Cotton</td>
+                        <td>Guntur</td>
+                        <td>₹7,200</td>
+                        <td class="price-up">▲ Rising</td>
+                    </tr>
+
+                    <tr>
+                        <td>Maize</td>
+                        <td>Vijayawada</td>
+                        <td>₹2,100</td>
+                        <td>▬ Stable</td>
+                    </tr>
+
+                    <tr>
+                        <td>Groundnut</td>
+                        <td>Anantapur</td>
+                        <td>₹6,000</td>
+                        <td class="price-up">▲ Rising</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GOVERNMENT SCHEMES
+    ========================== -->
+
+    <section class="section" id="schemes">
+
+        <div class="section-title">
+
+            <h2>Government Schemes</h2>
+
+            <p>
+                Agriculture-related schemes and support
+            </p>
+
+        </div>
+
+        <div class="scheme-grid">
+
+            <div class="scheme-card">
+
+                <h3>🌾 PM-KISAN</h3>
+
+                <p>
+                    Financial support scheme designed
+                    to provide income support to eligible
+                    farmer families.
+                </p>
+
+                <a href="#">
+                    View Details →
+                </a>
+
+            </div>
+
+
+            <div class="scheme-card">
+
+                <h3>🌱 Crop Insurance</h3>
+
+                <p>
+                    Crop insurance programs can help
+                    protect eligible farmers against
+                    specified crop losses.
+                </p>
+
+                <a href="#">
+                    View Details →
+                </a>
+
+            </div>
+
+
+            <div class="scheme-card">
+
+                <h3>💧 Irrigation Support</h3>
+
+                <p>
+                    Information about irrigation and
+                    water-management support for
+                    agricultural activities.
+                </p>
+
+                <a href="#">
+                    View Details →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REGISTRATION
+    ========================== -->
+
+    <section class="section registration" id="registration">
+
+        <div class="section-title">
+
+            <h2 style="color:white;">
+                Farmer Registration
+            </h2>
+
+            <p style="color:#d8f5dc;">
+                Register to access farmer services
+            </p>
+
+        </div>
+
+        <div class="registration-box">
+
+            <form>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>Farmer Name</label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Mobile Number</label>
+
+                        <input
+                            type="tel"
+                            placeholder="Enter mobile number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>District</label>
+
+                        <select>
+
+                            <option>Select District</option>
+                            <option>Visakhapatnam</option>
+                            <option>Alluri Sitharama Raju</option>
+                            <option>Anakapalli</option>
+                            <option>Vizianagaram</option>
+                            <option>East Godavari</option>
+                            <option>Guntur</option>
+                            <option>Krishna</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Main Crop</label>
+
+                        <select>
+
+                            <option>Select Crop</option>
+                            <option>Rice</option>
+                            <option>Cotton</option>
+                            <option>Maize</option>
+                            <option>Groundnut</option>
+                            <option>Vegetables</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label>Village</label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter village name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                        >
+                            Register as Farmer
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="section" id="contact">
+
+        <div class="section-title">
+
+            <h2>Contact Rythu Mithra</h2>
+
+            <p>
+                Get support and agricultural information
+            </p>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <div class="icon">📞</div>
+
+                <h3>Farmer Helpline</h3>
+
+                <p>
+                    Call for agriculture-related assistance
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">📧</div>
+
+                <h3>Email Support</h3>
+
+                <p>
+                    support@rythumithra.example
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">📍</div>
+
+                <h3>Location</h3>
+
+                <p>
+                    Andhra Pradesh, India
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h2>🌾 Rythu Mithra</h2>
+
+        <p>
+            Digital Support Platform for Farmers
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#crops">Crops</a>
+            <a href="#market">Market</a>
+            <a href="#schemes">Schemes</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+        <p>
+            © 2026 Rythu Mithra. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

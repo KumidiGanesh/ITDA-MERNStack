@@ -1,0 +1,1122 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ASR Tribal PGRS | Public Grievance Redressal System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f7f2;
+            color: #26352a;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: linear-gradient(135deg, #174d32, #287a4b);
+            color: white;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            background: white;
+            color: #17613b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo h1 {
+            font-size: 21px;
+        }
+
+        .logo p {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd85c;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 520px;
+            background:
+                linear-gradient(rgba(10,55,32,0.72), rgba(10,55,32,0.72)),
+                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 span {
+            color: #ffd54f;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 27px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #ffd54f;
+            color: #173d29;
+        }
+
+        .btn-primary:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #174d32;
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 65px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #195d39;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #68756c;
+        }
+
+        /* ================= DASHBOARD ================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            border-top: 5px solid #287a4b;
+        }
+
+        .stat-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .stat-card h3 {
+            font-size: 30px;
+            color: #17613b;
+        }
+
+        .stat-card p {
+            color: #69766d;
+            margin-top: 5px;
+        }
+
+        /* ================= GRIEVANCE CARDS ================= */
+
+        .services {
+            background: #eaf2eb;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.13);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+            background: #dcefe1;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 {
+            color: #195d39;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #667168;
+            line-height: 1.6;
+        }
+
+        /* ================= GRIEVANCE FORM ================= */
+
+        .form-section {
+            background: white;
+        }
+
+        .form-container {
+            max-width: 850px;
+            margin: auto;
+            background: #f8faf8;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #34483a;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd6cd;
+            border-radius: 7px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #287a4b;
+            box-shadow: 0 0 0 2px rgba(40,122,75,0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 7px;
+            background: #17613b;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #0d4528;
+        }
+
+        /* ================= TRACK ================= */
+
+        .track-section {
+            background: #eaf2eb;
+        }
+
+        .track-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .track-box input {
+            width: 70%;
+            padding: 14px;
+            border: 1px solid #ccd6ce;
+            border-radius: 7px;
+            margin-right: 8px;
+        }
+
+        .track-box button {
+            padding: 14px 22px;
+            background: #287a4b;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .track-result {
+            margin-top: 25px;
+            padding: 15px;
+            background: #eef7ef;
+            border-radius: 8px;
+            color: #195d39;
+            display: none;
+        }
+
+        /* ================= PROCESS ================= */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .step {
+            position: relative;
+        }
+
+        .step-number {
+            width: 55px;
+            height: 55px;
+            margin: auto;
+            border-radius: 50%;
+            background: #287a4b;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            color: #195d39;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: #69756c;
+            line-height: 1.5;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #174d32;
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .contact-card {
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+        }
+
+        .contact-card .icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: #d7e5da;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #0e3221;
+            color: #cbd8ce;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 45px 5%;
+            }
+
+            .stats,
+            .service-grid,
+            .process,
+            .contact-grid,
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .track-box input {
+                width: 100%;
+                margin: 0 0 10px 0;
+            }
+
+            .track-box button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            <div class="logo-circle">ASR</div>
+
+            <div>
+                <h1>ASR Tribal PGRS</h1>
+                <p>Public Grievance Redressal System</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#register">Register Grievance</a>
+            <a href="#track">Track</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h2>
+                ASR Tribal <span>Grievance Portal</span>
+            </h2>
+
+            <p>
+                A digital platform for tribal citizens to submit,
+                track and resolve public grievances quickly,
+                transparently and efficiently.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#register" class="btn btn-primary">
+                    📝 Register Grievance
+                </a>
+
+                <a href="#track" class="btn btn-outline">
+                    🔍 Track Grievance
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>Grievance Dashboard</h2>
+
+            <p>
+                Current grievance status overview
+            </p>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">📋</div>
+                <h3>1,248</h3>
+                <p>Total Grievances</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <h3>326</h3>
+                <p>Pending</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🔄</div>
+                <h3>187</h3>
+                <p>Under Process</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <h3>735</h3>
+                <p>Resolved</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+
+        <div class="section-title">
+
+            <h2>Grievance Categories</h2>
+
+            <p>
+                Select the appropriate category for your complaint
+            </p>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <div class="service-icon">🏠</div>
+
+                <h3>Housing & Land</h3>
+
+                <p>
+                    Submit complaints related to land,
+                    housing, property and rehabilitation.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="service-icon">🌾</div>
+
+                <h3>Agriculture</h3>
+
+                <p>
+                    Issues related to agriculture,
+                    farming, irrigation and crop support.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="service-icon">🏥</div>
+
+                <h3>Health Services</h3>
+
+                <p>
+                    Report problems related to hospitals,
+                    medical services and health facilities.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="service-icon">🎓</div>
+
+                <h3>Education</h3>
+
+                <p>
+                    Submit grievances related to schools,
+                    colleges, scholarships and education.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="service-icon">💧</div>
+
+                <h3>Water & Sanitation</h3>
+
+                <p>
+                    Report drinking water,
+                    drainage and sanitation problems.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <div class="service-icon">🛣️</div>
+
+                <h3>Roads & Infrastructure</h3>
+
+                <p>
+                    Report damaged roads, street lights,
+                    public infrastructure and transport issues.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REGISTER GRIEVANCE -->
+
+    <section class="form-section" id="register">
+
+        <div class="section-title">
+
+            <h2>Register Your Grievance</h2>
+
+            <p>
+                Fill in the details below to submit your complaint
+            </p>
+
+        </div>
+
+        <div class="form-container">
+
+            <form onsubmit="submitGrievance(event)">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Mobile Number</label>
+
+                        <input
+                            type="tel"
+                            placeholder="Enter mobile number"
+                            pattern="[0-9]{10}"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>District</label>
+
+                        <select required>
+
+                            <option value="">
+                                Select District
+                            </option>
+
+                            <option>
+                                Alluri Sitharama Raju
+                            </option>
+
+                            <option>
+                                Visakhapatnam
+                            </option>
+
+                            <option>
+                                Anakapalli
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Mandal</label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter mandal"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Grievance Category</label>
+
+                    <select required>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option>Housing & Land</option>
+
+                        <option>Agriculture</option>
+
+                        <option>Health Services</option>
+
+                        <option>Education</option>
+
+                        <option>Water & Sanitation</option>
+
+                        <option>Roads & Infrastructure</option>
+
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Grievance Description</label>
+
+                    <textarea
+                        placeholder="Describe your grievance in detail..."
+                        required>
+                    </textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Upload Supporting Document</label>
+
+                    <input type="file">
+
+                </div>
+
+
+                <button class="submit-btn" type="submit">
+
+                    Submit Grievance
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRACK GRIEVANCE -->
+
+    <section class="track-section" id="track">
+
+        <div class="section-title">
+
+            <h2>Track Your Grievance</h2>
+
+            <p>
+                Enter your grievance ID to check the current status
+            </p>
+
+        </div>
+
+        <div class="track-box">
+
+            <input
+                type="text"
+                id="grievanceId"
+                placeholder="Example: ASR-PGRS-10001"
+            >
+
+            <button onclick="trackGrievance()">
+                Track
+            </button>
+
+            <div class="track-result" id="trackResult">
+
+                <strong>Grievance Status:</strong>
+                Under Process
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>How PGRS Works</h2>
+
+            <p>
+                Simple four-step grievance resolution process
+            </p>
+
+        </div>
+
+
+        <div class="process">
+
+            <div class="step">
+
+                <div class="step-number">1</div>
+
+                <h3>Register</h3>
+
+                <p>
+                    Submit your grievance through the online form.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">2</div>
+
+                <h3>Verification</h3>
+
+                <p>
+                    The concerned department verifies your complaint.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">3</div>
+
+                <h3>Action</h3>
+
+                <p>
+                    The responsible officer takes necessary action.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">4</div>
+
+                <h3>Resolution</h3>
+
+                <p>
+                    You receive the final grievance resolution.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+
+            <h2 style="color:white;">
+                Contact & Support
+            </h2>
+
+            <p style="color:#d7e5da;">
+                Need help? Contact the ASR Tribal PGRS support team.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <div class="icon">📞</div>
+
+                <h3>Helpline</h3>
+
+                <p>1800-XXX-XXXX</p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">✉️</div>
+
+                <h3>Email</h3>
+
+                <p>support@asrtribal.gov.in</p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="icon">📍</div>
+
+                <h3>Office</h3>
+
+                <p>
+                    ASR Tribal District Administration
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 ASR Tribal PGRS |
+            Public Grievance Redressal System
+        </p>
+
+        <p>
+            Designed for Digital Public Service Delivery
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function submitGrievance(event) {
+
+            event.preventDefault();
+
+            const grievanceId =
+                "ASR-PGRS-" +
+                Math.floor(10000 + Math.random() * 90000);
+
+            alert(
+                "Grievance submitted successfully!\n\n" +
+                "Your Grievance ID: " +
+                grievanceId
+            );
+
+            event.target.reset();
+        }
+
+
+        function trackGrievance() {
+
+            const id =
+                document.getElementById("grievanceId").value;
+
+            const result =
+                document.getElementById("trackResult");
+
+            if (id.trim() === "") {
+
+                alert("Please enter your grievance ID.");
+
+                return;
+            }
+
+            result.style.display = "block";
+
+            result.innerHTML =
+                "<strong>Grievance ID:</strong> " +
+                id +
+                "<br><br>" +
+                "<strong>Status:</strong> Under Process";
+
+        }
+
+    </script>
+
+</body>
+</html>
+```

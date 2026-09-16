@@ -1,0 +1,1268 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ITDA Paderu PGRS</title>
+
+<style>
+
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7f5;
+    color: #222;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: #123c2a;
+    color: white;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-circle {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #f4c542;
+    color: #123c2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.logo h2 {
+    font-size: 21px;
+}
+
+.logo span {
+    font-size: 12px;
+    color: #dbe9e0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+nav button {
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+nav button:hover,
+nav button.active {
+    background: #f4c542;
+    color: #123c2a;
+}
+
+/* ================= PAGES ================= */
+
+.page {
+    display: none;
+    min-height: calc(100vh - 85px);
+}
+
+.page.active {
+    display: block;
+}
+
+/* ================= HOME ================= */
+
+.hero {
+    min-height: 540px;
+
+    background:
+    linear-gradient(rgba(10,50,34,.78),rgba(10,50,34,.78)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    color: #f4c542;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 24px;
+    margin: 5px;
+    background: #f4c542;
+    color: #123c2a;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background: #e3b21e;
+}
+
+.btn.white {
+    background: white;
+}
+
+/* ================= SECTIONS ================= */
+
+section.content-section {
+    padding: 60px 7%;
+}
+
+.section-title {
+    text-align: center;
+    color: #123c2a;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 750px;
+    margin: auto;
+    color: #666;
+}
+
+/* ================= CARDS ================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card {
+    background: white;
+    padding: 30px 22px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #123c2a;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ================= PAGE BANNER ================= */
+
+.page-banner {
+    background: linear-gradient(135deg,#123c2a,#26724e);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.page-banner h1 {
+    font-size: 42px;
+}
+
+.page-banner p {
+    margin-top: 8px;
+    color: #e5eee8;
+}
+
+/* ================= ABOUT ================= */
+
+.about-box {
+    background: white;
+    max-width: 950px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+}
+
+.about-box h2 {
+    color: #123c2a;
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* ================= FORM ================= */
+
+.form-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,.09);
+}
+
+.form-container h2 {
+    color: #123c2a;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin: 12px 0 6px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccd5cf;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #123c2a;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #26724e;
+}
+
+/* ================= TRACK ================= */
+
+.track-container {
+    max-width: 750px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,.09);
+    text-align: center;
+}
+
+.track-container h2 {
+    color: #123c2a;
+    margin-bottom: 15px;
+}
+
+.track-container p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.track-input {
+    max-width: 500px;
+    margin: auto;
+}
+
+.status-box {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f1f6f3;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.status-box h3 {
+    color: #123c2a;
+    margin-bottom: 15px;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #d5ded8;
+}
+
+.pending {
+    color: #d48700;
+    font-weight: bold;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.contact-card {
+    background: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+
+.contact-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.contact-card h3 {
+    color: #123c2a;
+    margin-bottom: 10px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #102f22;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .cards,
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+}
+
+@media(max-width:600px) {
+
+    nav button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+    }
+
+    .page-banner h1 {
+        font-size: 32px;
+    }
+
+    .form-container,
+    .track-container {
+        margin: 30px 5%;
+        padding: 22px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-circle">
+            ITDA
+        </div>
+
+        <div>
+            <h2>ITDA Paderu</h2>
+            <span>Public Grievance Redressal System</span>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <button class="active" onclick="showPage('home',this)">
+            Home
+        </button>
+
+        <button onclick="showPage('about',this)">
+            About ITDA
+        </button>
+
+        <button onclick="showPage('grievance',this)">
+            Register Grievance
+        </button>
+
+        <button onclick="showPage('track',this)">
+            Track Grievance
+        </button>
+
+        <button onclick="showPage('contact',this)">
+            Contact
+        </button>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HOME PAGE ================= -->
+
+<div id="home" class="page active">
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>ITDA Paderu PGRS</h1>
+
+            <h2>
+                Public Grievance Redressal System
+            </h2>
+
+            <p>
+                A digital platform for citizens to register,
+                submit and track their grievances related to
+                public services in the ITDA Paderu area.
+            </p>
+
+            <div class="buttons">
+
+                <button class="btn"
+                onclick="showPage('grievance')">
+                    Register Grievance
+                </button>
+
+                <button class="btn white"
+                onclick="showPage('track')">
+                    Track Grievance
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <h2 class="section-title">
+            Welcome to ITDA Paderu PGRS
+        </h2>
+
+        <p class="section-description">
+            This portal provides citizens with an easy way
+            to submit grievances and access grievance-related
+            services.
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Register Grievance
+                </h3>
+
+                <p>
+                    Submit your complaint or problem online
+                    using our grievance registration form.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🔍
+                </div>
+
+                <h3>
+                    Track Grievance
+                </h3>
+
+                <p>
+                    Enter your grievance ID and check the
+                    current status of your complaint.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    ☎️
+                </div>
+
+                <h3>
+                    Citizen Support
+                </h3>
+
+                <p>
+                    Contact the concerned office for support
+                    and grievance-related information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ================= ABOUT PAGE ================= -->
+
+<div id="about" class="page">
+
+    <section class="page-banner">
+
+        <h1>
+            About ITDA Paderu
+        </h1>
+
+        <p>
+            Integrated Tribal Development Agency
+        </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <div class="about-box">
+
+            <h2>
+                About ITDA
+            </h2>
+
+            <p>
+                The Integrated Tribal Development Agency (ITDA)
+                works towards the overall development and welfare
+                of tribal communities.
+            </p>
+
+            <p>
+                ITDA Paderu provides various development,
+                welfare and public service activities for
+                people living in tribal areas.
+            </p>
+
+            <p>
+                The PGRS portal provides a convenient digital
+                platform where citizens can submit grievances
+                and communicate their problems to the concerned
+                authorities.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Education
+                </h3>
+
+                <p>
+                    Supporting educational development and
+                    opportunities for tribal students.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🏥
+                </div>
+
+                <h3>
+                    Health
+                </h3>
+
+                <p>
+                    Supporting access to healthcare and
+                    welfare services.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Tribal Development
+                </h3>
+
+                <p>
+                    Promoting social and economic development
+                    of tribal communities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ================= GRIEVANCE PAGE ================= -->
+
+<div id="grievance" class="page">
+
+    <section class="page-banner">
+
+        <h1>
+            Register Grievance
+        </h1>
+
+        <p>
+            Submit your problem online
+        </p>
+
+    </section>
+
+
+    <div class="form-container">
+
+        <h2>
+            Grievance Registration Form
+        </h2>
+
+        <form onsubmit="submitGrievance(event)">
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+            type="text"
+            placeholder="Enter your full name"
+            required>
+
+
+            <label>
+                Mobile Number
+            </label>
+
+            <input
+            type="tel"
+            placeholder="Enter mobile number"
+            required>
+
+
+            <label>
+                Email Address
+            </label>
+
+            <input
+            type="email"
+            placeholder="Enter email address">
+
+
+            <label>
+                District
+            </label>
+
+            <select required>
+
+                <option value="">
+                    Select District
+                </option>
+
+                <option>
+                    Alluri Sitharama Raju
+                </option>
+
+                <option>
+                    Visakhapatnam
+                </option>
+
+                <option>
+                    Anakapalli
+                </option>
+
+            </select>
+
+
+            <label>
+                Mandal
+            </label>
+
+            <input
+            type="text"
+            placeholder="Enter your mandal">
+
+
+            <label>
+                Grievance Category
+            </label>
+
+            <select required>
+
+                <option value="">
+                    Select Category
+                </option>
+
+                <option>
+                    Education
+                </option>
+
+                <option>
+                    Health
+                </option>
+
+                <option>
+                    Roads
+                </option>
+
+                <option>
+                    Drinking Water
+                </option>
+
+                <option>
+                    Housing
+                </option>
+
+                <option>
+                    Agriculture
+                </option>
+
+                <option>
+                    Other
+                </option>
+
+            </select>
+
+
+            <label>
+                Grievance Subject
+            </label>
+
+            <input
+            type="text"
+            placeholder="Enter grievance subject"
+            required>
+
+
+            <label>
+                Describe Your Grievance
+            </label>
+
+            <textarea
+            rows="6"
+            placeholder="Describe your problem in detail"
+            required></textarea>
+
+
+            <label>
+                Upload Supporting Document
+            </label>
+
+            <input type="file">
+
+
+            <button
+            type="submit"
+            class="submit-btn">
+
+                Submit Grievance
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TRACK PAGE ================= -->
+
+<div id="track" class="page">
+
+    <section class="page-banner">
+
+        <h1>
+            Track Grievance
+        </h1>
+
+        <p>
+            Check your grievance status
+        </p>
+
+    </section>
+
+
+    <div class="track-container">
+
+        <h2>
+            Grievance Status
+        </h2>
+
+        <p>
+            Enter your grievance ID below.
+        </p>
+
+
+        <input
+        id="grievanceId"
+        class="track-input"
+        type="text"
+        placeholder="Example: PGRS20260001">
+
+
+        <br>
+
+        <button
+        class="btn"
+        onclick="trackGrievance()">
+
+            Track Grievance
+
+        </button>
+
+
+        <div
+        id="statusBox"
+        class="status-box"
+        style="display:none;">
+
+            <h3>
+                Grievance Details
+            </h3>
+
+            <div class="status-row">
+
+                <span>
+                    Grievance ID
+                </span>
+
+                <strong id="displayId">
+                </strong>
+
+            </div>
+
+
+            <div class="status-row">
+
+                <span>
+                    Category
+                </span>
+
+                <strong>
+                    Public Service
+                </strong>
+
+            </div>
+
+
+            <div class="status-row">
+
+                <span>
+                    Date
+                </span>
+
+                <strong>
+                    10 September 2026
+                </strong>
+
+            </div>
+
+
+            <div class="status-row">
+
+                <span>
+                    Status
+                </span>
+
+                <strong class="pending">
+                    Under Process
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CONTACT PAGE ================= -->
+
+<div id="contact" class="page">
+
+    <section class="page-banner">
+
+        <h1>
+            Contact Us
+        </h1>
+
+        <p>
+            Get in touch with ITDA Paderu
+        </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <div class="contact-cards">
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <h3>
+                    Office Address
+                </h3>
+
+                <p>
+                    Integrated Tribal Development Agency,
+                    Paderu, Andhra Pradesh.
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <h3>
+                    Phone
+                </h3>
+
+                <p>
+                    Contact the concerned ITDA office
+                    for assistance.
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    ✉️
+                </div>
+
+                <h3>
+                    Email
+                </h3>
+
+                <p>
+                    Contact the official ITDA communication
+                    channel for enquiries.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-container">
+
+            <h2>
+                Send an Enquiry
+            </h2>
+
+            <form onsubmit="sendMessage(event)">
+
+                <label>
+                    Name
+                </label>
+
+                <input
+                type="text"
+                placeholder="Your Name"
+                required>
+
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                type="email"
+                placeholder="Your Email"
+                required>
+
+
+                <label>
+                    Subject
+                </label>
+
+                <input
+                type="text"
+                placeholder="Subject"
+                required>
+
+
+                <label>
+                    Message
+                </label>
+
+                <textarea
+                rows="6"
+                placeholder="Write your message"
+                required></textarea>
+
+
+                <button
+                class="submit-btn"
+                type="submit">
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 ITDA Paderu PGRS |
+        Public Grievance Redressal System
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function showPage(pageId, button) {
+
+    // Hide all pages
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+
+    // Show selected page
+    document.getElementById(pageId).classList.add("active");
+
+
+    // Remove active from navigation
+    const buttons = document.querySelectorAll("nav button");
+
+    buttons.forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+
+    // Add active to selected button
+    if(button) {
+        button.classList.add("active");
+    }
+
+
+    // Scroll to top
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* ================= GRIEVANCE SUBMIT ================= */
+
+function submitGrievance(event) {
+
+    event.preventDefault();
+
+    alert(
+        "Your grievance has been submitted successfully!\n\n" +
+        "Demo Grievance ID: PGRS20260001"
+    );
+
+}
+
+
+/* ================= TRACK GRIEVANCE ================= */
+
+function trackGrievance() {
+
+    const id =
+    document.getElementById("grievanceId").value.trim();
+
+
+    if(id === "") {
+
+        alert("Please enter your Grievance ID.");
+
+        return;
+    }
+
+
+    document.getElementById("displayId").innerText = id;
+
+    document.getElementById("statusBox").style.display = "block";
+
+}
+
+
+/* ================= CONTACT FORM ================= */
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    alert(
+        "Thank you! Your enquiry has been submitted successfully."
+    );
+
+}
+
+</script>
+
+</body>
+</html>
+```
