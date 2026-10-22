@@ -1,0 +1,1100 @@
+:root {
+  --navy: #082c25;
+  --navy-deep: #041d19;
+  --ink: #102e27;
+  --muted: #687f76;
+  --green: #00a978;
+  --green-bright: #19d99a;
+  --green-pale: #e4f8ed;
+  --line: #dcebe3;
+  --paper: #fff;
+  --soft: #f2f8f4;
+  --shadow: 0 18px 48px rgba(2, 28, 21, 0.14);
+}
+
+body {
+  background: #f3f8f5;
+}
+
+.site-header {
+  border-color: rgba(156, 224, 189, 0.14);
+  background: rgba(4, 29, 25, 0.9);
+}
+
+.site-header .brand,
+.site-header .main-nav > a,
+.site-header .nav-actions > a {
+  color: #e6f7ed;
+}
+
+.site-header .nav-actions > .button-quiet {
+  color: #fff !important;
+}
+
+.site-header .brand-word span,
+.site-header .main-nav > .nav-home,
+.site-header .main-nav > a:hover,
+.site-header .nav-actions > a:hover {
+  color: #5aefb2;
+}
+
+.site-header .button-quiet:hover {
+  background: rgba(105, 231, 170, 0.1);
+}
+
+@media (max-width: 760px) {
+  .site-header .mobile-nav-actions > .mobile-login {
+    color: #0b3427 !important;
+  }
+}
+
+.hero-section {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 70% 25%, rgba(0, 201, 130, 0.2), transparent 34%),
+    radial-gradient(ellipse at 25% 87%, rgba(32, 116, 70, 0.28), transparent 36%),
+    linear-gradient(135deg, #041c19 0%, #073c2c 52%, #062a22 100%);
+  color: #f4fff8;
+}
+
+.hero-section::before {
+  position: absolute;
+  z-index: -1;
+  right: -7%;
+  bottom: 0;
+  left: -7%;
+  height: 31%;
+  background:
+    radial-gradient(ellipse at 28% 0%, rgba(30, 126, 74, 0.62), transparent 50%),
+    linear-gradient(165deg, transparent 0 17%, rgba(4, 40, 30, 0.8) 17.2% 48%, transparent 48.2%),
+    linear-gradient(18deg, #031914 10%, #07543a 66%, #0c7048 100%);
+  clip-path: polygon(0 39%, 16% 21%, 31% 40%, 48% 8%, 67% 36%, 82% 15%, 100% 43%, 100% 100%, 0 100%);
+  content: '';
+  opacity: 0.83;
+}
+
+.hero-section::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 23%, rgba(69, 243, 166, 0.62) 0 1px, transparent 3px),
+    radial-gradient(circle at 84% 17%, rgba(92, 255, 189, 0.55) 0 1px, transparent 3px),
+    radial-gradient(circle at 58% 56%, rgba(92, 255, 189, 0.45) 0 1px, transparent 3px),
+    linear-gradient(180deg, rgba(1, 18, 15, 0.12), transparent 43%, rgba(0, 17, 13, 0.3));
+  content: '';
+  pointer-events: none;
+}
+
+.hero-layout,
+.hero-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-layout {
+  min-height: 600px;
+}
+
+.hero-copy h1,
+.hero-tagline {
+  color: #f5fff8;
+}
+
+.hero-copy h1 span,
+.trust-label {
+  color: #4be8a9;
+}
+
+.hero-description,
+.hero-note {
+  color: #c4ddd0;
+}
+
+.hero-bottom {
+  border-color: rgba(173, 238, 198, 0.2);
+  color: #b3d2c0;
+}
+
+.hero-bottom-line {
+  background: #4be8a9;
+}
+
+.hero-glow {
+  border-color: rgba(71, 238, 165, 0.16);
+  box-shadow: 0 0 80px rgba(5, 219, 133, 0.08);
+}
+
+.orbit {
+  border-color: rgba(105, 240, 176, 0.28);
+}
+
+.orbit-inner {
+  border-color: rgba(105, 240, 176, 0.22);
+}
+
+.hero-art::before {
+  background: radial-gradient(circle, rgba(18, 185, 120, 0.2), rgba(13, 69, 49, 0.16) 65%, transparent 70%);
+}
+
+.hero-art::after {
+  border-color: rgba(97, 244, 174, 0.35);
+  background: radial-gradient(circle at 35% 27%, #0e6044, #062c23 74%);
+  box-shadow: 0 0 55px rgba(15, 230, 143, 0.2), inset 0 0 30px rgba(35, 206, 136, 0.12);
+}
+
+.hero-art-center {
+  color: #f1fff6;
+}
+
+.hero-art-leaf {
+  background: linear-gradient(145deg, #11bd7b, #056342);
+  color: #c8ffe0;
+  box-shadow: 0 0 26px rgba(39, 250, 158, 0.3);
+}
+
+.orbit-dot {
+  border-color: #07392b;
+  background: #3dffae;
+  box-shadow: 0 0 17px rgba(60, 255, 173, 0.85);
+}
+
+.orbit-dot-two {
+  background: #6bf1b2;
+}
+
+.orbit-dot-three {
+  background: #b7ffd1;
+}
+
+.connect-card {
+  border-color: rgba(134, 231, 177, 0.25);
+  background: rgba(5, 47, 35, 0.92);
+  box-shadow: 0 15px 40px rgba(0, 12, 9, 0.34), 0 0 24px rgba(18, 213, 130, 0.08);
+}
+
+.connect-card strong {
+  color: #f2fff6;
+}
+
+.connect-card small,
+.art-caption {
+  color: #b1d5c0;
+}
+
+.connect-icon-green,
+.connect-icon-blue,
+.connect-heart {
+  background: rgba(34, 206, 132, 0.15);
+  color: #55f1aa;
+}
+
+.connect-arrow {
+  color: #5deca9;
+}
+
+.how-section,
+.audience-section,
+.loan-examples-section,
+.benefits-section,
+.faq-section {
+  background: #f2f8f4;
+}
+
+.step-card,
+.loan-example-card,
+.audience-light {
+  border-color: #d9e9df;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(4, 49, 34, 0.07);
+}
+
+.step-icon,
+.audience-icon,
+.benefit-icon {
+  background: #e3f8ed;
+  color: #009967;
+  box-shadow: inset 0 0 0 1px rgba(0, 169, 120, 0.06);
+}
+
+.button-primary {
+  background: linear-gradient(105deg, #00a873, #09c88a);
+  box-shadow: 0 8px 22px rgba(0, 169, 115, 0.27);
+}
+
+.button-primary:hover {
+  background: linear-gradient(105deg, #008a61, #00b879);
+  box-shadow: 0 10px 28px rgba(0, 190, 123, 0.33);
+}
+
+.button-outline {
+  border-color: #b7d8c5;
+  color: #075e43;
+}
+
+.button-outline:hover {
+  border-color: #57c991;
+  background: #eaf9f0;
+}
+
+.audience-dark {
+  border-color: #11563e;
+  background:
+    radial-gradient(ellipse at 95% 8%, rgba(18, 183, 110, 0.24), transparent 43%),
+    linear-gradient(145deg, #082e24, #041e19);
+}
+
+.dashboard-page,
+.loan-app-page,
+.transaction-page,
+.marketplace-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 82% 10%, rgba(2, 124, 80, 0.15), transparent 35%),
+    #071b17;
+  color: #e6f4eb;
+}
+
+.dashboard-nav {
+  position: relative;
+  z-index: 10;
+  border-bottom-color: rgba(151, 225, 184, 0.14);
+  background: rgba(4, 29, 24, 0.95);
+  box-shadow: 0 10px 28px rgba(0, 14, 10, 0.17);
+}
+
+.dashboard-nav .brand,
+.dashboard-user-copy strong,
+.loan-nav-links > a {
+  color: #e8f7ed;
+}
+
+.dashboard-nav .brand-word span {
+  color: #53e9a8;
+}
+
+.dashboard-user-copy span,
+.dashboard-transactions-link,
+.loan-nav-links > a {
+  color: #a6c7b5;
+}
+
+.loan-nav-links > a:hover,
+.loan-nav-links > .loan-nav-active,
+.dashboard-transactions-link:hover {
+  color: #55edaa;
+}
+
+.dashboard-logout {
+  border-color: rgba(158, 230, 186, 0.24);
+  background: rgba(11, 66, 48, 0.75);
+  color: #d9f8e5;
+}
+
+.dashboard-logout:hover {
+  border-color: #29ce89;
+  background: #0c553c;
+}
+
+.dashboard-main,
+.loan-page-shell,
+.transaction-shell {
+  color: #e8f5ec;
+}
+
+.dashboard-greeting h1,
+.loan-page-heading h1,
+.transaction-page-heading h1,
+.repayment-heading h1,
+.details-title-row h1 {
+  color: #f0fff5;
+}
+
+.dashboard-greeting > p,
+.dashboard-preview-note,
+.loan-page-heading > p:last-child,
+.transaction-page-heading p:last-child,
+.loan-back-link {
+  color: #aac4b5;
+}
+
+.section-eyebrow {
+  color: #48dda0;
+}
+
+.dashboard-preview-card {
+  border-color: rgba(108, 223, 160, 0.25);
+  background:
+    radial-gradient(ellipse at 87% 25%, rgba(13, 195, 123, 0.33), transparent 38%),
+    linear-gradient(125deg, #0b4b36, #082a23 75%);
+  box-shadow: 0 18px 48px rgba(0, 12, 9, 0.25), inset 0 1px rgba(213, 255, 229, 0.07);
+}
+
+.dashboard-preview-card h2 {
+  color: #f1fff6;
+}
+
+.dashboard-preview-card p:last-child {
+  color: #bad8c7;
+}
+
+.dashboard-preview-icon {
+  border-color: rgba(84, 244, 166, 0.35);
+  background: rgba(47, 218, 137, 0.15);
+  color: #6af3b0;
+  box-shadow: 0 0 35px rgba(35, 233, 142, 0.13);
+}
+
+.loan-form,
+.loan-list-card,
+.loan-list-loading,
+.loan-empty-state,
+.repayment-summary,
+.repayment-history-card,
+.repayment-form-card,
+.repayment-next-card,
+.transaction-toolbar,
+.transaction-table-wrap,
+.transaction-state {
+  border-color: rgba(151, 219, 177, 0.17);
+  background: #0d2922;
+  color: #e0f0e6;
+  box-shadow: 0 15px 40px rgba(0, 11, 8, 0.23);
+}
+
+.loan-form {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(10, 126, 76, 0.12), transparent 32%),
+    #0c2922;
+}
+
+.loan-address-section {
+  border-color: rgba(151, 219, 177, 0.2);
+  background: rgba(5, 35, 27, 0.45);
+}
+
+.loan-address-section legend,
+.loan-address-section > p,
+.auth-field label {
+  color: #c2dfcd;
+}
+
+.auth-field input,
+.auth-field select,
+.auth-field textarea,
+.transaction-search,
+.transaction-sort {
+  border-color: rgba(156, 206, 174, 0.27);
+  background: #071e19;
+  color: #effbf3;
+}
+
+.auth-field input::placeholder,
+.auth-field textarea::placeholder,
+.transaction-search input::placeholder {
+  color: #759384;
+}
+
+.auth-field input:focus,
+.auth-field select:focus,
+.auth-field textarea:focus {
+  border-color: #2ed894;
+  box-shadow: 0 0 0 3px rgba(20, 218, 135, 0.14);
+}
+
+.field-hint,
+.loan-form-footer p,
+.loan-list-description,
+.loan-meta,
+.loan-list-amount span,
+.loan-empty-state p,
+.loan-list-loading,
+.repayment-summary-item > span,
+.repayment-total > span,
+.repayment-history-copy span,
+.transaction-demo-note {
+  color: #9ab9a7;
+}
+
+.loan-list-title h2,
+.loan-list-amount strong,
+.loan-empty-state h2,
+.repayment-total > strong,
+.repayment-summary-item > strong,
+.repayment-section-heading h2,
+.repayment-form-card h2,
+.transaction-state h2 {
+  color: #effbf3;
+}
+
+.loan-list-amount,
+.loan-meta,
+.repayment-summary-item,
+.repayment-section-heading,
+.repayment-history-row,
+.transaction-table th,
+.transaction-table td {
+  border-color: rgba(151, 219, 177, 0.14);
+}
+
+.loan-empty-icon,
+.repayment-history-empty > span,
+.repayment-history-icon,
+.transaction-state-icon {
+  background: rgba(27, 205, 128, 0.16);
+  color: #55eda9;
+}
+
+.loan-repayment-link {
+  color: #55eda9;
+}
+
+.marketplace-hero {
+  background:
+    radial-gradient(ellipse at 76% 35%, rgba(17, 208, 125, 0.25), transparent 36%),
+    linear-gradient(120deg, #041c18, #075038 60%, #06291f);
+}
+
+.marketplace-hero::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40%;
+  background: linear-gradient(160deg, transparent 0 38%, rgba(3, 26, 20, 0.36) 38.2% 68%, transparent 68.2%);
+  content: '';
+  pointer-events: none;
+}
+
+.marketplace-hero-inner {
+  z-index: 1;
+}
+
+.marketplace-hero h1 span {
+  color: #58edac;
+}
+
+.marketplace-content {
+  color: #e9f6ed;
+}
+
+.marketplace-heading h2,
+.marketplace-empty h3,
+.marketplace-empty h2,
+.market-live-activity h3 {
+  color: #f1fff6;
+}
+
+.marketplace-heading > div > p:last-child,
+.marketplace-hero-inner > div:first-child > p:last-child,
+.marketplace-disclaimer {
+  color: #a8c6b4;
+}
+
+.marketplace-count,
+.market-loan-card,
+.marketplace-loading,
+.marketplace-empty,
+.market-live-activity,
+.loan-details-main,
+.loan-details-sidebar {
+  border-color: rgba(147, 223, 174, 0.18);
+  background: #0d2a22;
+  color: #e6f5eb;
+  box-shadow: 0 14px 38px rgba(0, 13, 9, 0.22);
+}
+
+.marketplace-count {
+  color: #b7d8c4;
+}
+
+.market-borrower strong,
+.market-purpose,
+.market-amounts strong,
+.details-amount-grid strong,
+.details-title-row h1,
+.details-label {
+  color: #f0fff5;
+}
+
+.market-borrower small,
+.market-purpose-label,
+.market-description,
+.market-amounts span,
+.market-progress-heading,
+.market-card-meta,
+.marketplace-empty > p,
+.details-list dt,
+.details-funding-note,
+.loan-details-description {
+  color: #a2bfad;
+}
+
+.borrower-avatar {
+  border-color: rgba(75, 229, 157, 0.3);
+  background: rgba(15, 175, 106, 0.18);
+  color: #78f0b4;
+}
+
+.market-amounts,
+.details-funding,
+.details-list > div {
+  border-color: rgba(151, 219, 177, 0.16);
+}
+
+.market-progress-track {
+  background: #183e31;
+}
+
+.market-progress-track > span {
+  background: linear-gradient(90deg, #00a873, #54f3a8);
+  box-shadow: 0 0 12px rgba(43, 238, 151, 0.4);
+}
+
+.market-fund-button {
+  border-color: rgba(80, 238, 164, 0.4);
+  background: linear-gradient(100deg, #00a873, #0ecb87);
+  color: #03261b;
+  font-weight: 800;
+  box-shadow: 0 7px 18px rgba(0, 205, 126, 0.18);
+}
+
+.market-fund-button:not(:disabled):hover {
+  border-color: #68f6b1;
+  background: linear-gradient(100deg, #12c789, #4beaa1);
+}
+
+.transaction-total-count {
+  border-color: rgba(151, 219, 177, 0.18);
+  background: #0d2922;
+  color: #b7d9c4;
+}
+
+.transaction-toolbar {
+  background: #0d2922;
+}
+
+.transaction-filter {
+  color: #a4c2b0;
+}
+
+.transaction-filter:hover,
+.transaction-filter-active {
+  border-color: rgba(71, 232, 158, 0.28);
+  background: rgba(15, 183, 109, 0.17);
+  color: #62edac;
+}
+
+.transaction-search input,
+.transaction-sort select {
+  color: #eaf7ee;
+}
+
+.transaction-table th {
+  background: #103128;
+  color: #8daf9b;
+}
+
+.transaction-table td {
+  color: #b7d0c1;
+}
+
+.transaction-table tbody tr:hover {
+  background: rgba(46, 193, 124, 0.08);
+}
+
+.transaction-reference,
+.transaction-loan-title,
+.transaction-amount {
+  color: #edfcf2 !important;
+}
+
+.transaction-type-funding,
+.transaction-status-pending {
+  background: rgba(91, 166, 225, 0.16);
+  color: #9dccf2;
+}
+
+.transaction-type-repayment,
+.transaction-status-completed {
+  background: rgba(37, 202, 123, 0.16);
+  color: #6ee8a9;
+}
+
+.transaction-type-refund,
+.transaction-status-failed {
+  background: rgba(255, 193, 90, 0.14);
+  color: #f0c777;
+}
+
+.auth-page {
+  gap: 0;
+  background: #061d18;
+}
+
+.auth-aside {
+  background:
+    radial-gradient(ellipse at 60% 50%, rgba(6, 188, 109, 0.28), transparent 36%),
+    linear-gradient(145deg, #041a17, #075137 62%, #04241d);
+}
+
+.auth-aside::after {
+  position: absolute;
+  right: -8%;
+  bottom: 0;
+  left: -8%;
+  height: 34%;
+  background: linear-gradient(155deg, transparent 0 30%, rgba(2, 36, 26, 0.55) 30.2% 60%, transparent 60.2%);
+  clip-path: polygon(0 47%, 20% 17%, 38% 45%, 58% 8%, 80% 36%, 100% 13%, 100% 100%, 0 100%);
+  content: '';
+  pointer-events: none;
+}
+
+.auth-aside-copy h1 span {
+  color: #61efad;
+}
+
+.auth-aside-art {
+  border-color: rgba(83, 244, 164, 0.2);
+  box-shadow: 0 0 70px rgba(0, 218, 132, 0.13);
+}
+
+.auth-aside-art::before,
+.auth-aside-art::after {
+  border-color: rgba(83, 244, 164, 0.24);
+}
+
+.auth-panel {
+  background:
+    radial-gradient(ellipse at 88% 12%, rgba(9, 150, 90, 0.15), transparent 32%),
+    #f4f9f5;
+}
+
+.auth-form-wrap {
+  border: 1px solid rgba(8, 69, 46, 0.08);
+  border-radius: 22px;
+  padding: clamp(26px, 4vw, 42px);
+  background: #fff;
+  box-shadow: 0 28px 75px rgba(3, 31, 21, 0.13);
+}
+
+.auth-heading h2 {
+  color: #082c25;
+}
+
+.auth-field label {
+  color: #285144;
+}
+
+.auth-field input,
+.auth-field select {
+  border-radius: 10px;
+  background: #f9fcfa;
+  color: #0b3427;
+}
+
+.auth-field input:focus,
+.auth-field select:focus {
+  border-color: #13b779;
+  box-shadow: 0 0 0 3px rgba(8, 184, 112, 0.12);
+}
+
+.funding-modal {
+  border-color: rgba(109, 220, 157, 0.27);
+  background:
+    radial-gradient(ellipse at 95% 0%, rgba(14, 171, 101, 0.2), transparent 36%),
+    #0b2a21;
+  color: #e6f6ec;
+}
+
+.funding-modal h2,
+.funding-modal-intro strong,
+.funding-complete > p strong,
+.funding-amount-label {
+  color: #effff5;
+}
+
+.funding-modal-intro,
+.funding-complete > p:not(.section-eyebrow) {
+  color: #b2cdbd;
+}
+
+.funding-modal-close {
+  border-color: rgba(150, 218, 174, 0.22);
+  background: #123a2d;
+  color: #dff9e9;
+}
+
+.funding-amount-input input {
+  border-color: rgba(156, 206, 174, 0.28);
+  background: #061e18;
+  color: #effbf3;
+}
+
+.notification-panel {
+  border-color: rgba(147, 223, 174, 0.2);
+  background: #0d2922;
+  color: #e8f6ed;
+  box-shadow: 0 22px 60px rgba(0, 12, 9, 0.4);
+}
+
+.notification-panel-heading {
+  border-color: rgba(151, 219, 177, 0.15);
+}
+
+.notification-panel-heading h2,
+.notification-item-content > strong {
+  color: #f1fff6;
+}
+
+.notification-panel-heading div > span,
+.notification-item-content > span,
+.notification-item-content > time,
+.notification-item-status,
+.notification-panel-empty {
+  color: #a8c4b2;
+}
+
+.notification-item {
+  border-color: rgba(151, 219, 177, 0.12);
+}
+
+.notification-item:hover,
+.notification-item-read {
+  background: rgba(24, 152, 91, 0.13);
+}
+
+.notification-item-indicator {
+  background: #34e396;
+  box-shadow: 0 0 12px rgba(52, 227, 150, 0.5);
+}
+
+.app-bottom-nav {
+  display: none;
+}
+
+.dashboard-loan-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 19px;
+}
+
+.dashboard-preview-card > div:first-child {
+  min-width: 0;
+}
+
+.dashboard-preview-card p:last-child {
+  max-width: 460px;
+}
+
+@media (max-width: 760px) {
+  .hero-layout {
+    min-height: 660px;
+  }
+
+  .hero-section::before {
+    height: 25%;
+  }
+
+  .auth-page {
+    min-height: 100vh;
+    gap: 0;
+    background: #f4f9f5;
+  }
+
+  .auth-aside {
+    min-height: 250px;
+    padding: 22px 24px;
+  }
+
+  .auth-panel {
+    flex: 1;
+    padding: 26px 22px 38px;
+  }
+
+  .auth-form-wrap {
+    width: min(100%, 500px);
+    padding: 25px;
+  }
+
+  .dashboard-page,
+  .loan-app-page,
+  .transaction-page,
+  .marketplace-page {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .dashboard-main,
+  .loan-page-shell,
+  .transaction-shell {
+    padding-top: 34px;
+  }
+
+  .marketplace-content {
+    padding-top: 34px;
+  }
+
+  .marketplace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .marketplace-hero-inner {
+    min-height: 270px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    position: sticky;
+  }
+
+  .nav-shell {
+    width: calc(100% - 34px);
+    height: 68px;
+  }
+
+  .hero-layout {
+    min-height: 620px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .hero-art {
+    filter: drop-shadow(0 0 26px rgba(0, 202, 124, 0.12));
+  }
+
+  .hero-section::before {
+    height: 20%;
+  }
+
+  .auth-aside {
+    min-height: 218px;
+    padding-inline: 21px;
+  }
+
+  .auth-aside-copy {
+    padding-top: 23px;
+  }
+
+  .auth-panel {
+    padding: 20px 15px 30px;
+  }
+
+  .auth-form-wrap {
+    border-radius: 18px;
+    padding: 23px 20px;
+  }
+
+  .dashboard-nav {
+    height: 64px;
+    padding-inline: 15px;
+  }
+
+  .dashboard-user {
+    gap: 8px;
+  }
+
+  .dashboard-user-copy {
+    display: none;
+  }
+
+  .dashboard-transactions-link {
+    display: none;
+  }
+
+  .dashboard-logout {
+    min-height: 34px;
+    padding-inline: 10px;
+    font-size: 9px;
+  }
+
+  .loan-nav-links {
+    max-width: none;
+    gap: 9px;
+  }
+
+  .loan-nav-links > a {
+    display: none;
+  }
+
+  .loan-nav-links .dashboard-logout {
+    flex: 0 0 auto;
+    min-height: 32px;
+    padding-inline: 8px;
+    font-size: 8px;
+  }
+
+  .dashboard-main {
+    width: calc(100% - 32px);
+    padding-top: 30px;
+  }
+
+  .dashboard-preview-card {
+    min-height: 0;
+    gap: 18px;
+    border-radius: 17px;
+    padding: 22px;
+  }
+
+  .dashboard-preview-card h2 {
+    font-size: 20px;
+  }
+
+  .dashboard-loan-actions {
+    flex-wrap: wrap;
+  }
+
+  .loan-page-shell,
+  .transaction-shell,
+  .marketplace-shell {
+    width: calc(100% - 32px);
+  }
+
+  .loan-form {
+    border-radius: 17px;
+    padding: 19px 16px;
+  }
+
+  .loan-address-section {
+    padding: 13px;
+  }
+
+  .loan-form-footer {
+    align-items: stretch;
+  }
+
+  .loan-form-footer .button {
+    width: 100%;
+  }
+
+  .loan-list-card,
+  .market-loan-card,
+  .loan-details-main,
+  .loan-details-sidebar,
+  .repayment-history-card,
+  .repayment-form-card {
+    border-radius: 15px;
+    padding: 18px;
+  }
+
+  .marketplace-hero-inner {
+    min-height: 250px;
+  }
+
+  .marketplace-hero-art {
+    position: absolute;
+    right: 4px;
+    width: 125px;
+    height: 125px;
+    opacity: 0.42;
+  }
+
+  .marketplace-art-label {
+    display: none;
+  }
+
+  .marketplace-hero-inner > div:first-child {
+    position: relative;
+    z-index: 2;
+  }
+
+  .marketplace-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .market-amounts {
+    gap: 4px;
+  }
+
+  .market-amounts strong {
+    font-size: 11px;
+  }
+
+  .transaction-shell {
+    padding-bottom: 96px;
+  }
+
+  .transaction-filter {
+    min-height: 34px;
+    padding-inline: 9px;
+  }
+
+  .transaction-table-wrap {
+    border-radius: 14px;
+  }
+
+  .transaction-table th,
+  .transaction-table td {
+    padding: 12px 11px;
+  }
+
+  .repayment-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+    border-radius: 15px;
+  }
+
+  .repayment-total {
+    grid-column: 1 / -1;
+    background: linear-gradient(120deg, #0d553a, #0c3025);
+  }
+
+  .repayment-summary-item {
+    min-height: 78px;
+    border-top: 1px solid rgba(151, 219, 177, 0.14);
+    border-left: 0;
+    padding: 14px;
+  }
+
+  .app-bottom-nav {
+    position: fixed;
+    z-index: 50;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    min-height: calc(68px + env(safe-area-inset-bottom));
+    align-items: stretch;
+    justify-content: space-around;
+    border-top: 1px solid rgba(123, 225, 164, 0.2);
+    padding: 7px 9px calc(7px + env(safe-area-inset-bottom));
+    background: rgba(4, 28, 23, 0.96);
+    box-shadow: 0 -12px 35px rgba(0, 14, 9, 0.32);
+    backdrop-filter: blur(18px);
+  }
+
+  .app-bottom-nav-link {
+    display: flex;
+    min-width: 58px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    gap: 3px;
+    border-radius: 11px;
+    color: #91b7a1;
+    font-size: 9px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 150ms ease, background 150ms ease;
+  }
+
+  .app-bottom-nav-link.is-active {
+    background: rgba(34, 204, 126, 0.12);
+    color: #5aefaa;
+  }
+
+  .app-bottom-nav-icon {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .dashboard-main,
+  .loan-page-shell,
+  .marketplace-content {
+    padding-bottom: 96px;
+  }
+}

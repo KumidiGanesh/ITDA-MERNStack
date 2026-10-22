@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fresh food delivered quickly from local favorites.">
+  <title>Crave - Food delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Crave home"><span class="brand-mark">C</span><span>crave</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="active" href="#top">Home</a>
+      <a href="#restaurants">Restaurants</a>
+      <a href="#how-it-works">How it works</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="searchButton" aria-label="Focus search">⌕</button>
+      <button class="cart-button" id="cartButton"><span>Cart</span><strong id="cartCount">0</strong></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Good food, good mood</p>
+        <h1 id="hero-title">Your next<br><em>favorite meal</em><br>is waiting.</h1>
+        <p class="hero-text">Order from the best local kitchens and get something delicious delivered to your door.</p>
+        <div class="search-wrap">
+          <span aria-hidden="true">⌕</span>
+          <label class="sr-only" for="searchInput">Search dishes or restaurants</label>
+          <input id="searchInput" type="search" placeholder="Search dishes or restaurants">
+          <button id="searchSubmit">Find food</button>
+        </div>
+        <div class="delivery-note"><span class="pulse-dot"></span><span>Delivering now in <strong>25-35 min</strong></span></div>
+      </div>
+      <div class="hero-art" aria-label="A bowl of fresh food" role="img">
+        <div class="art-sun"></div>
+        <div class="art-leaf leaf-one"></div>
+        <div class="art-leaf leaf-two"></div>
+        <div class="bowl-shadow"></div>
+        <div class="bowl"><div class="bowl-food"><span class="food tomato"></span><span class="food greens"></span><span class="food egg"></span><span class="food onion"></span><span class="food herb"></span></div></div>
+        <div class="art-tag"><strong>Freshly made</strong><span>with love</span></div>
+      </div>
+    </section>
+
+    <section class="content-section" id="restaurants" aria-labelledby="restaurant-title">
+      <div class="section-heading"><div><p class="eyebrow">Explore the menu</p><h2 id="restaurant-title">What are you craving?</h2></div><button class="text-button" id="showAllButton">View all <span>-></span></button></div>
+      <div class="category-list" role="tablist" aria-label="Food categories">
+        <button class="category active" data-category="all" role="tab"><span>All</span></button>
+        <button class="category" data-category="pizza" role="tab"><span class="category-icon">🍕</span><span>Pizza</span></button>
+        <button class="category" data-category="burgers" role="tab"><span class="category-icon">🍔</span><span>Burgers</span></button>
+        <button class="category" data-category="asian" role="tab"><span class="category-icon">🍜</span><span>Asian</span></button>
+        <button class="category" data-category="healthy" role="tab"><span class="category-icon">🥗</span><span>Healthy</span></button>
+        <button class="category" data-category="desserts" role="tab"><span class="category-icon">🍰</span><span>Desserts</span></button>
+      </div>
+      <div class="restaurant-grid" id="restaurantGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No matches yet. Try another dish or category.</p>
+    </section>
+
+    <section class="how-section" id="how-it-works" aria-labelledby="how-title">
+      <div><p class="eyebrow">Simple from start to finish</p><h2 id="how-title">Dinner is three taps away.</h2></div>
+      <div class="steps"><div class="step"><span>01</span><h3>Choose a craving</h3><p>Browse dishes from the best kitchens around you.</p></div><div class="step"><span>02</span><h3>Place your order</h3><p>Customize your meal and check out securely.</p></div><div class="step"><span>03</span><h3>Enjoy the moment</h3><p>Track your delivery while you set the table.</p></div></div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-header"><div><p class="eyebrow">Your order</p><h2>Your cart</h2></div><button class="close-button" id="closeCart" aria-label="Close cart">&times;</button></div>
+    <div class="cart-items" id="cartItems"><p class="cart-empty">Your cart is waiting for something delicious.</p></div>
+    <div class="cart-footer"><div><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div><button class="checkout-button" id="checkoutButton" disabled>Checkout <span>-></span></button></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+  <footer><span>crave</span><span>Made for hungry moments.</span><span>&copy; 2026 Crave</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>

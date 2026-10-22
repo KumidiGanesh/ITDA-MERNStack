@@ -1,0 +1,488 @@
+.phone-showcase {
+  isolation: isolate;
+  width: min(100%, 520px);
+  aspect-ratio: 1.04;
+  overflow: visible;
+  filter: drop-shadow(0 30px 40px rgba(0, 12, 8, 0.24));
+}
+
+.phone-showcase::before,
+.phone-showcase::after {
+  display: none;
+}
+
+.phone-preview-label {
+  position: absolute;
+  z-index: 4;
+  right: 1%;
+  bottom: 3%;
+  color: rgba(181, 222, 196, 0.72);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.preview-phone {
+  position: absolute;
+  border: 2px solid #a5a497;
+  border-radius: 15% / 7%;
+  padding: 5px;
+  background: linear-gradient(135deg, #e2dfd0, #5c665e 15%, #c4c0ae 21%, #353f3a 23%, #17251f 77%, #c3beae 82%, #58605a 87%, #d9d4c5);
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.52),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.36);
+}
+
+.preview-phone-dashboard {
+  z-index: 1;
+  top: 4%;
+  right: 4%;
+  width: 41%;
+  height: 88%;
+  animation: phone-dashboard-float 7s ease-in-out infinite;
+}
+
+.preview-phone-welcome {
+  z-index: 2;
+  top: 6%;
+  left: 22%;
+  width: 42%;
+  height: 88%;
+  transform: rotate(-37deg);
+  animation: phone-welcome-float 7s ease-in-out infinite;
+}
+
+.preview-phone-screen {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  border-radius: 13% / 6%;
+  padding: 10% 8% 7%;
+  background:
+    radial-gradient(ellipse at 83% 6%, rgba(82, 202, 156, 0.23), transparent 35%),
+    linear-gradient(155deg, #155348 0%, #0b342d 42%, #08271f 100%);
+  color: #f2fff7;
+}
+
+.preview-status-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9%;
+  color: rgba(241, 255, 247, 0.84);
+  font-size: clamp(5px, 0.7vw, 8px);
+  font-weight: 700;
+}
+
+.preview-phone-greeting {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 9%;
+}
+
+.preview-profile-mark,
+.preview-add-mark {
+  display: grid;
+  width: clamp(18px, 2.7vw, 29px);
+  height: clamp(18px, 2.7vw, 29px);
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #78d8a2, #167452);
+  color: #effff5;
+  font-size: clamp(8px, 1vw, 12px);
+  font-weight: 800;
+}
+
+.preview-phone-greeting > span:nth-child(2) {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 2px;
+}
+
+.preview-phone-greeting small {
+  color: #b9d5c5;
+  font-size: clamp(5px, 0.66vw, 7px);
+}
+
+.preview-phone-greeting strong {
+  overflow: hidden;
+  font-size: clamp(6px, 0.82vw, 9px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preview-add-mark {
+  width: clamp(17px, 2.4vw, 25px);
+  height: clamp(17px, 2.4vw, 25px);
+  border-radius: 8px;
+  background: #e9fff0;
+  color: #0a5139;
+}
+
+.preview-balance-card {
+  position: relative;
+  display: flex;
+  min-height: 27%;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 7%;
+  border: 1px solid rgba(193, 248, 211, 0.15);
+  border-radius: 12px;
+  margin-bottom: 10%;
+  padding: 9%;
+  background: linear-gradient(135deg, rgba(71, 157, 125, 0.65), rgba(22, 87, 68, 0.78));
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.preview-balance-card > small {
+  position: relative;
+  z-index: 1;
+  color: #c1e0cd;
+  font-size: clamp(5px, 0.7vw, 8px);
+}
+
+.preview-balance-card > strong {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(10px, 1.4vw, 16px);
+  line-height: 1.12;
+}
+
+.preview-status-pill {
+  position: absolute;
+  top: 9%;
+  right: 7%;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid rgba(221, 255, 230, 0.18);
+  border-radius: 99px;
+  padding: 3px 5px;
+  background: rgba(4, 42, 30, 0.48);
+  color: #d4f5df;
+  font-size: clamp(4px, 0.56vw, 6px);
+}
+
+.preview-status-pill i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #63edaa;
+}
+
+.preview-card-pattern {
+  position: absolute;
+  right: -12%;
+  bottom: -58%;
+  width: 78%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(213, 255, 223, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 12px rgba(213, 255, 223, 0.035), 0 0 0 25px rgba(213, 255, 223, 0.025);
+}
+
+.preview-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 6%;
+  font-size: clamp(6px, 0.78vw, 9px);
+}
+
+.preview-section-heading > span {
+  color: #9be6b8;
+  font-size: clamp(5px, 0.62vw, 7px);
+}
+
+.preview-community-row {
+  display: flex;
+  gap: 6%;
+  margin-bottom: 10%;
+}
+
+.preview-community-avatar {
+  display: grid;
+  width: clamp(20px, 3vw, 32px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(226, 255, 235, 0.42);
+  border-radius: 34%;
+  background: linear-gradient(145deg, #edc578, #bb7c3e);
+  color: #fff8e8;
+  font-size: clamp(9px, 1.2vw, 13px);
+}
+
+.avatar-leaf {
+  background: linear-gradient(145deg, #73c89a, #246949);
+}
+
+.avatar-heart {
+  background: linear-gradient(145deg, #d58b80, #80473f);
+}
+
+.avatar-more {
+  border-style: dashed;
+  background: rgba(203, 242, 215, 0.1);
+  color: #c9f2d6;
+}
+
+.preview-activity-card {
+  flex: 1;
+  border: 1px solid rgba(228, 255, 236, 0.12);
+  border-radius: 10px;
+  padding: 9% 7% 4%;
+  background: rgba(226, 255, 236, 0.12);
+}
+
+.preview-activity-card .preview-section-heading {
+  margin-bottom: 7%;
+}
+
+.preview-activity-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-top: 1px solid rgba(225, 255, 235, 0.1);
+  padding: 7% 0;
+}
+
+.preview-activity-icon {
+  display: grid;
+  width: clamp(17px, 2.4vw, 25px);
+  height: clamp(17px, 2.4vw, 25px);
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 6px;
+  background: rgba(196, 249, 211, 0.17);
+  color: #a2efbb;
+}
+
+.preview-activity-row > span:nth-child(2) {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 3px;
+}
+
+.preview-activity-row strong {
+  overflow: hidden;
+  color: #effcf3;
+  font-size: clamp(5px, 0.67vw, 7px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preview-activity-row small {
+  overflow: hidden;
+  color: #b0cebc;
+  font-size: clamp(4px, 0.56vw, 6px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preview-row-arrow {
+  color: #a7d9b7;
+  font-size: 15px;
+}
+
+.preview-phone-tabs {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 8%;
+  color: #99bca6;
+}
+
+.preview-phone-tabs span {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  font-size: clamp(4px, 0.56vw, 6px);
+}
+
+.preview-phone-tabs i {
+  font-size: clamp(9px, 1.1vw, 12px);
+  font-style: normal;
+}
+
+.preview-phone-tabs .is-selected {
+  color: #78edaa;
+}
+
+.preview-phone-welcome .preview-phone-screen {
+  padding: 12% 10% 9%;
+  background:
+    radial-gradient(ellipse at 69% 43%, rgba(37, 131, 102, 0.5), transparent 36%),
+    linear-gradient(155deg, #0b3a30, #05261f 73%);
+}
+
+.preview-welcome-mark {
+  display: grid;
+  width: clamp(20px, 3vw, 32px);
+  height: clamp(20px, 3vw, 32px);
+  place-items: center;
+  border: 1px solid rgba(184, 244, 202, 0.3);
+  border-radius: 9px;
+  background: linear-gradient(145deg, #24bf7b, #0c6645);
+  color: #e4fff0;
+}
+
+.preview-welcome-eyebrow {
+  margin-top: 11%;
+  color: #90dca9;
+  font-size: clamp(4px, 0.58vw, 6px);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.preview-welcome-title {
+  margin-top: 4%;
+  color: #f2fff6;
+  font-family: var(--serif);
+  font-size: clamp(13px, 2vw, 22px);
+  letter-spacing: -0.6px;
+  line-height: 1.08;
+}
+
+.preview-welcome-copy {
+  width: 87%;
+  margin-top: 5%;
+  color: #b8d8c4;
+  font-size: clamp(5px, 0.72vw, 8px);
+  line-height: 1.6;
+}
+
+.preview-welcome-art {
+  position: relative;
+  display: block;
+  min-height: 33%;
+  overflow: hidden;
+  margin: 8% -12% 0;
+  border-top: 1px solid rgba(160, 227, 183, 0.12);
+  background: linear-gradient(180deg, rgba(42, 138, 102, 0.17), rgba(2, 25, 19, 0.2));
+}
+
+.preview-art-hill {
+  position: absolute;
+  right: -15%;
+  bottom: -31%;
+  left: -18%;
+  height: 82%;
+  border: 1px solid rgba(158, 229, 178, 0.17);
+  border-radius: 50% 50% 0 0 / 32% 32% 0 0;
+  background: linear-gradient(145deg, #155941, #082e23 74%);
+  transform: rotate(-9deg);
+}
+
+.preview-art-hill-back {
+  bottom: -42%;
+  left: 28%;
+  background: linear-gradient(135deg, #277254, #0b3929 75%);
+  transform: rotate(12deg);
+}
+
+.preview-art-spark {
+  position: absolute;
+  top: 12%;
+  right: 23%;
+  color: #a6f5bb;
+  font-size: clamp(8px, 1.5vw, 16px);
+}
+
+.preview-art-leaf {
+  position: absolute;
+  right: 28%;
+  bottom: 13%;
+  display: grid;
+  width: clamp(25px, 4vw, 42px);
+  height: clamp(25px, 4vw, 42px);
+  place-items: center;
+  border: 1px solid rgba(147, 237, 176, 0.3);
+  border-radius: 14px;
+  background: rgba(36, 158, 102, 0.4);
+  color: #bcffd0;
+  box-shadow: 0 0 30px rgba(25, 219, 132, 0.18);
+}
+
+.preview-welcome-button {
+  display: flex;
+  min-height: 11%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  margin-top: auto;
+  padding: 0 9%;
+  background: #f0fff4;
+  color: #0b3c2a;
+  font-size: clamp(6px, 0.85vw, 9px);
+  font-weight: 800;
+}
+
+.preview-welcome-button > span {
+  font-size: 13px;
+}
+
+.preview-welcome-footer {
+  margin-top: 7%;
+  color: #91bfa0;
+  font-size: clamp(4px, 0.52vw, 6px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+@keyframes phone-dashboard-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes phone-welcome-float {
+  0%, 100% { transform: rotate(-37deg) translateY(0); }
+  50% { transform: rotate(-37deg) translateY(-5px); }
+}
+
+@media (max-width: 760px) {
+  .phone-showcase {
+    width: min(100%, 440px);
+    aspect-ratio: 1.08;
+  }
+}
+
+@media (max-width: 480px) {
+  .phone-showcase {
+    width: calc(100% + 10px);
+    aspect-ratio: 1.03;
+    margin-left: -5px;
+  }
+
+  .preview-phone-dashboard {
+    right: 2%;
+    width: 43%;
+    height: 88%;
+  }
+
+  .preview-phone-welcome {
+    left: 20%;
+    width: 43%;
+    height: 88%;
+  }
+
+  .phone-preview-label {
+    right: 0;
+    bottom: 0;
+    font-size: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preview-phone-dashboard,
+  .preview-phone-welcome {
+    animation: none;
+  }
+}
